@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="wsimport-bin" basedir=".">
+	
+	<property name="wsdl" value="http://localhost:8080/BrokerTool/StockPriceService?WSDL"/>
+	<property name="package" value="trader"/>
+	<property name="classes-dir" value="bin"/>
+	<property name="src-dir" value="src"/>
+	
+	<target name="wsimport-bin">
+		<exec executable="wsimport">
+			<arg line="-keep -s ${src-dir} -d ${classes-dir} -p ${package} ${wsdl}"/>
+		</exec>
+	</target>
+	
+</project>
